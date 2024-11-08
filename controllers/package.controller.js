@@ -195,7 +195,7 @@ exports.getSpecificPackage = async (req, res) => {
 exports.paymentSuccess = async (req, res) => {
   const tran_id = req.params.tran_id;
   // const package = await Package.findOne({ tran_id: tran_id })
-  res.redirect(`http://localhost:3000/payment/success/${tran_id}`);
+  res.redirect(`http://localhost:5173/payment/success/${tran_id}`);
 };
 
 exports.paymentFail = async (req, res) => {
@@ -204,7 +204,7 @@ exports.paymentFail = async (req, res) => {
   const result = await Package.deleteOne({ tran_id: tran_id });
 
   if (result.deletedCount) {
-    res.redirect(`http://localhost:3000/payment/fail/${tran_id}`);
+    res.redirect(`http://localhost:5173/payment/fail/${tran_id}`);
   }
 };
 
@@ -213,5 +213,5 @@ exports.paymentCancel = async (req, res) => {
   // const package = await Package.findOne({ tran_id: tran_id });
   const result = await Package.deleteOne({ tran_id: tran_id });
 
-  res.redirect(`http://localhost:3000/payment/Cancel/${tran_id}`);
+  res.redirect(`http://localhost:5173/payment/Cancel/${tran_id}`);
 };
