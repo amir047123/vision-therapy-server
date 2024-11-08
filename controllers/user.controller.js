@@ -40,9 +40,9 @@ const sendSignUpMail = async (name, email, password) => {
 };
 
 exports.singUp = async (req, res, next) => {
+  console.log("hit")
   try {
     const user = await createSignUpService(req.body);
-
     const userip = new User({
       macAddress: [],
       deviceName: [],

@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 const { verifyJwt } = require("../Hooks/verifyJwt");
 
-router.get("/",verifyJwt, userController.getUsers);
+router.get("/", userController.getUsers);
 router.post("/signup", userController.singUp);
 router.patch("/verify/user", userController.verifyEmail);
 router.post("/login", userController.logIn);
