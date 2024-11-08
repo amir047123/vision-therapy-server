@@ -23,19 +23,8 @@ const contactRoutes = require("./routes/contact.Routes");
 //team
 const teamRoutes = require("./routes/team.Route");
 const orderRoutes = require("./routes/order.Routes");
-const heroRoutes = require("./routes/hero.route");
-const whyMedmyneRoutes = require("./routes/whyMedmyne.routes");
-const doctorReviewRoutes = require("./routes/doctorReview.route");
-const growRoutes = require("./routes/grow.route");
-const stepsRoutes = require("./routes/steps.route");
-const lectureRoutes = require("./routes/lecture.route");
-const researchRoutes = require("./routes/research.route");
-const userFaqRoutes = require("./routes/userFaq.route");
-const userFooters = require("./routes/footer.route");
-const brochureRoutes = require("./routes/brochure.route");
-const myOrderDetailsRoutes = require("./routes/orderDetails.route");
-const doctorFaqRouts = require("./routes/doctorFaq.route");
-const patientReviewRoutes = require("./routes/patientReview.route");
+
+
 
 //clinical Finding route
 
@@ -78,20 +67,6 @@ app.use("/api/v1/teams", teamRoutes);
 app.use("/api/v1", clinicalFindingRouter);
 app.use("/api/v1/orders", orderRoutes);
 
-// front end api
-app.use("/api/v1/hero", heroRoutes);
-app.use("/api/v1/whyMedmyne", whyMedmyneRoutes);
-app.use("/api/v1/doctorReview", doctorReviewRoutes);
-app.use("/api/v1/grow", growRoutes);
-app.use("/api/v1/steps", stepsRoutes);
-app.use("/api/v1/lecture", lectureRoutes);
-app.use("/api/v1/patientReview", patientReviewRoutes);
-app.use("/api/v1/research", researchRoutes);
-app.use("/api/v1/brochure", brochureRoutes);
-app.use("/api/v1/userFaq", userFaqRoutes);
-app.use("/api/v1/doctorFaq", doctorFaqRouts);
-app.use("/api/v1/footer", userFooters);
-app.use("/api/v1/OrderDetails", myOrderDetailsRoutes);
 
 //get image
 app.get("/images/:filename", function (req, res) {
