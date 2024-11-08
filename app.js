@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-
-
 const imageUploadRoutes = require("./routes/imageUpload.route");
 const userRoutes = require("./routes/user.route");
 const smoothMovementRoutes = require("./routes/smoothMovement.route");
@@ -21,7 +19,7 @@ const transactionRoutes = require("./routes/transaction.route");
 //product
 const productRoutes = require("./routes/product.Routes");
 //contact
-const contactRoutes = require("./routes/contact.Routes"); // Adjust the path based on your directory structure
+const contactRoutes = require("./routes/contact.Routes");
 //team
 const teamRoutes = require("./routes/team.Route");
 const orderRoutes = require("./routes/order.Routes");
@@ -45,7 +43,12 @@ const clinicalFindingRouter = require("./routes/clinicalFinding.Router");
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/package", packageRoutes);
